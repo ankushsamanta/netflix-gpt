@@ -1,19 +1,18 @@
 import Header from "./Header";
 import { useRef, useState } from "react";
-import {checkValidData} from "../utils/validate";
+import { checkValidData } from "../utils/validate";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { backgroundIMG, profileURL } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const name = useRef(null);
@@ -37,11 +36,10 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up logic
           const user = userCredential.user;
-          
+
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://media.licdn.com/dms/image/v2/D4D03AQFzmMqfajrd8A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1726470035760?e=2147483647&v=beta&t=XyTbTlRXXwrDPaM6s4oU0HH_zdgqui9GLZnKsBrRei8",
+            photoURL:  profileURL ,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -50,15 +48,13 @@ const Login = () => {
                   uid: uid,
                   email: email,
                   displayName: displayName,
-                  photoURL: photoURL  
+                  photoURL: photoURL,
                 }),
               );
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.message);
             });
-          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -74,7 +70,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -94,7 +89,7 @@ const Login = () => {
       <div className="absolute">
         <img
           className="w-full"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/6a77b075-d304-4342-a055-c9e435c98b6f/web/IN-en-20260406-TRIFECTA-perspective_82b47017-148f-45be-8db8-d82a0f936d18_large.jpg"
+          src= {backgroundIMG}
           alt="background"
         />
       </div>
