@@ -6,6 +6,7 @@ export const profileURL =    "https://upload.wikimedia.org/wikipedia/commons/0/0
 
 export const backgroundIMG = "https://assets.nflxext.com/ffe/siteui/vlv3/6a77b075-d304-4342-a055-c9e435c98b6f/web/IN-en-20260406-TRIFECTA-perspective_82b47017-148f-45be-8db8-d82a0f936d18_large.jpg"
 
+export const IMG_CDN_URL =  "https://image.tmdb.org/t/p/w300/"
 
 export const API_OPTIONS = {
   method: 'GET',
@@ -14,3 +15,4 @@ export const API_OPTIONS = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNTBhZDg0NmYxYWUyN2U1YTdkYjRmMmViZjFmYjA3NiIsIm5iZiI6MTc3NjYyMTkyMy40MTgsInN1YiI6IjY5ZTUxOTYzOTBjN2E1YzExNjA2M2U0ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1fYocGO1N4pV87BTytzOqXa94KAhIKyv3W_YPfEiU_c'
   }
 };
+

@@ -14,7 +14,7 @@
 
 
     return (
-      <div className="relative bg-black w-full">
+      <div>
         <VideoTitle title={original_title} overview={overview} />
         <VideoBackground movieId={id} />
       </div>

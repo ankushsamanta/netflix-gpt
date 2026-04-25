@@ -25,6 +25,9 @@
 -Created movieSlice 
 -Fetched data for trailer video from youtube
 -Update store with trailer video data
+-Added TMDB CDN
+-Fetched the popular movies API from TMDB
+-Added usePopularMovies and useTopRatedMovies hook.
 
 
 

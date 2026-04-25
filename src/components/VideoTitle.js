@@ -17,8 +17,8 @@ const VideoTitle = ({ title, overview }) => {
   return (
     // Added z-10 to ensure it stays on top of the video
     <div className="w-screen aspect-video pt-60 px-24 absolute text-white bg-gradient-to-r from-black z-10">
-      <h1 className="text-3xl font-bold">{title}</h1>
-      <p className="py-6 text-lg w-1/4">{overview}</p>
+      <h1 className="text-3xl font-bold -mt-10">{title}</h1>
+      <p className="py-6 text-base w-1/4">{overview}</p>
       <div className="flex gap-2">
         <button className="bg-white text-black p-3 px-12 text-xl rounded-lg hover:bg-opacity-80">
           ▶︎ Play
