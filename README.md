@@ -28,6 +28,8 @@
 -Added TMDB CDN
 -Fetched the popular movies API from TMDB
 -Added usePopularMovies and useTopRatedMovies hook.
+-GPT Search feature
+-Multi-language feature in the app
 
 
 
