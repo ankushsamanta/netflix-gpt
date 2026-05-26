@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
-import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
+import { LOGO, profileURL, SUPPORTED_LANGUAGES } from "../utils/constants";
 import { toggleGPTSearchView } from "../utils/GPTSlice";
 import { changeLanguage } from "../utils/configSlice";
 import { lang } from "../utils/languageConstants";
@@ -58,11 +58,11 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-30 flex justify-between">
-      <img className="w-40" src={LOGO} alt="Netflix logo" />
+    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-30 flex flex-col md:flex-row justify-between">
+      <img className="w-40 mx-auto md:mx-0" src={LOGO} alt="Netflix logo" />
 
       {user && (
-        <div className="flex p-2">
+        <div className="flex p-2 justify-between">
           {showGPTSearch && (
             <select
               className="p-2 m-2 bg-gray-900 text-white"
@@ -79,12 +79,12 @@ const Header = () => {
             className="py-2 px-4 mx-4 my-2 bg-purple-700 text-white rounded-lg"
             onClick={handleGPTSearchClick}
           >
-            {showGPTSearch? "Home Page":"GPT Search" }
+            {showGPTSearch ? "Home Page" : "GPT Search"}
           </button>
           <img
-            className="w-12 h-12 rounded-md"
+            className="hidden md:block w-12 h-12 rounded-sm"
             alt="usericon"
-            src={user?.photoURL}
+            src={user?.photoURL || profileURL}
           />
           <button
             onClick={handleSignOut}

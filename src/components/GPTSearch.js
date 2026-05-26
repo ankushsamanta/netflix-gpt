@@ -4,13 +4,19 @@ import { backgroundIMG } from "../utils/constants";
 
 const GPTSearch = () => {
   return (
-    <div>
-      <div className="absolute -z-10">
-        <img className="w-full" src={backgroundIMG} alt="background" />
+    <>
+      <div className="fixed  -z-10">
+        <img
+          className="h-screen w-screen object-cover"
+          src={backgroundIMG}
+          alt="background"
+        />
       </div>
-      <GPTSearchbar />
-      <GPTMovieSuggestions />
-    </div>
+      <div className="">
+        <GPTSearchbar />
+        <GPTMovieSuggestions />
+      </div>
+    </>
   );
 };
 

@@ -30,6 +30,14 @@
 -Added usePopularMovies and useTopRatedMovies hook.
 -GPT Search feature
 -Multi-language feature in the app
+-Get GPTSearch Groq API Key
+-GPTSearch API Call
+-Fetched GPT Movie suggestions from the TMDB
+-Created GPTSlice added data
+-Adding the environment .env file and added to gitignore
+-Made the page responsive to small and medium above devices
+-Changed the favicon and the page title.
+
 
 
 
